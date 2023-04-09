@@ -1,0 +1,62 @@
+<DOCTYPE <!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+       {% comment %} <h3> This is a form  created by HTML</h3>
+       <form action="" method="post"> 
+            <label for="user_name">Full Name</label>  
+            <input type="text" name="user_name" value=""required>
+            <hr>
+            <label for="user_email">Email</label>  
+            <input type="text" name="user_email" value=""required>
+            <hr>
+            <input type="submit" name="submit" value="submit">
+       </form>
+        <hr> {% endcomment %}
+        <h3>{{heading}}</h3>
+        <form action="" method="post">
+            {{test_form.as_p}}
+            {% csrf_token %}
+            <input type="submit" name="submit" value="submit">
+        </form>
+        {% if form_submitted%}
+        <p> Name:{{username}} </p>
+        <p> Email: {{email}} </p>
+        <p> Password: {{password}} </p>
+        <p> Date Of Birth: {{user_dob}} </p>
+        <p> Choice Field: {{choiceField}} </p>
+        <p> Boolean Field: {{bool_field}} </p> 
+        
+
+    {% endif %}
+        <hr>
+        <h2> {{heading2}}</h2>
+        <form action="" method="post">
+            {{test_form2.as_p}}
+            {% csrf_token %}
+            <input type="submit" name="submit" value="submit">
+        </form>
+        
+        
+        {% if form_submitted2%}
+        <p> nnumber_field:{{nnumber_field}} </p>
+         <p> field:{{user_email}} </p>
+        {% comment %} <p> user_vmail:{{user_vmail}} </p>  {% endcomment %}
+
+    {% endif %}
+        <hr>
+
+
+
+
+        <script src="" async defer></script>
+    </body>
+</html>
